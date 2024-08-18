@@ -15,22 +15,14 @@ client.on("ready", (c) => {
   console.log(`✅ ${c.user.tag} is online.`);
 });
 
-// Hello message:
+// Ping message:
 client.on("messageCreate", (message) => {
-  if (message.author.bot) {
-    return;
-  }
-
-  if (message.content === 'hello') {
-    message.reply('hello');
-  }
-});
-
-// Test message:
-client.on("messageCreate", (message) => {
-    if (message.content === "!test"){
-        message.channel.send('**Do you want to create your own Discord bot?**'
-        );
+    if (message.author.bot) {
+      return;
+    }
+  
+    if (message.content === "!ping"){
+        message.channel.send('Pong!');
     }
 })
 
